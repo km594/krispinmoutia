@@ -3,10 +3,19 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #div1 {
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
     <script>
 
 
-        var categoryObject = { 'Accessories': { 'Battery': ['Broken', 'Not working', 'Missing from order'], 'Joiners': ['Broken', 'Missing from order', 'Incorrect'], 'LED': ['Broken', 'Missing from order'], 'Sofa Light': ['Broken', 'Colour', 'Missing from order', 'Incorrect', 'Finish'], 'Table': ['Broken', 'Colour', 'Missing from order', 'Incorrect', 'Finish', 'Unaligned'], 'Timber': ['Broken', 'Chipped', 'Colour', 'Incorrect'], 'Legs': ['Wobbly', 'Damaged', 'Colour', 'Incorrect', 'Missing from order', 'Fitting'] }, 'Assembly': { 'Caps': ['Loose', 'Broken', 'Not sitting flush'], 'Installed incorrectly': ['Loose', 'Gap', 'Uneven', 'Height'], 'Bracket, Spacer': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Anchor Clip': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Glue': ['Detatched'], 'Hinges': ['Detatched', 'Jammed', 'Unaligned'], 'Knock ins': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Screws, bolts, rivets,  washers': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Pins': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Glider Rail': ['Damaged', 'Alignment'], 'Dowel Hole': ['Damaged', 'Unaligned'] }, 'Cover': { 'Dacron': ['Damaged'], 'Fabric': ['Fraying', 'Torn', 'Creased', 'Dirty', 'Pilling', 'Stretched', 'Puckering', 'Hole', 'Fading', 'Incorrect', 'Compression marks', 'Colour'], 'Fitting': ['Fitted incorrectly', 'Sagging', 'Askew', 'Pooling'], 'Leather': ['Torn', 'Dirty', 'Saggy', 'Fading', 'Hole', 'Fading', 'Incorrect', 'Mark', 'Scrached', 'Peeling', 'Colour'], 'Mesh': ['Damaged'], 'Nylon Ratchet strip': ['Damaged'], 'Rattan': ['Damaged'], 'Stitching': ['Damaged', 'Undone', 'Pulls', 'Alignment'], 'Zipper': ['Damaged'], 'Velcro': ['Damaged', 'Alignment'] }, 'Insert': { 'Foam': ['Bulging', 'Compressed', 'Lumpy', 'Too hard', 'Dipping'], 'Feathers': ['Bulging', 'Compressed', 'Lumpy', 'Too hard', 'Falling out', 'Smells', 'Dipping'], 'Foam Overlay': ['Bulging', 'Compressed', 'Lumpy'], 'Filling': ['Incorrect', 'Size'], 'Spring': ['Comfort'], 'Dome': ['Bulging', 'Compressed', 'Lumpy'], 'Mattress': ['Bulging', 'Compressed', 'Lumpy', 'Dirty'] }, 'Electrical': { 'Controller boxes': ['Faulty', 'Disconnected'], 'Headrest Motor': ['Faulty', 'Disconnected', 'Jammed'], 'Footrest Motor': ['Faulty', 'Disconnected', 'Jammed'], 'Transformer': ['Faulty', 'Disconnected'], 'IR': ['Faulty', 'Disconnected'], 'Seat wires': ['Faulty', 'Disconnected'], 'DMC': ['Faulty', 'Disconnected'] }, 'Frame': { 'Mechanism': ['Damaged', 'Jammed', 'Alignment', 'Noise'], 'Shape': ['Wobbly', 'Warped', 'Tipping', 'Weld', 'Alignment'], 'Clamp': ['Damaged', 'Rusted', 'Alignment', 'Rubbing'], 'Pulmaflex': ['Damaged', 'loose', 'Rubbing'], 'Gas strut': ['Damaged', 'Jammed', 'Size'], 'Finish': ['Peeling', 'Damaged', 'Colour', 'Rusted', 'Paint'], 'Wagon Wheel': ['Alignment', 'Wobbly'], 'Table': ['glass', 'Timber', 'Marble'] }, 'Kingcare': { 'Repairs': [''], 'Recovered': [''] }, 'Order': { 'Delivery': ['Incorrect', 'Damaged', 'Missing from order', 'Cancelled'], 'Dispatch': ['Incorrect', 'Missing from order'], 'Delivery': ['Incorrect', 'Missing from order', 'Damaged', 'Assembly'], 'Warehouse': ['Incorrect', 'Missing from order', 'Damaged'], 'Showroom': ['Incorrect', 'Missing from order'], 'GL': ['Incorrect', 'Missing from order', 'Damaged', 'Remake'], 'Customer': ['Incorrect'] } }
+        // var categoryObject = { 'Accessories': { 'Battery': ['Broken', 'Not working', 'Missing from order'], 'Joiners': ['Broken', 'Missing from order', 'Incorrect'], 'LED': ['Broken', 'Missing from order'], 'Sofa Light': ['Broken', 'Colour', 'Missing from order', 'Incorrect', 'Finish'], 'Table': ['Broken', 'Colour', 'Missing from order', 'Incorrect', 'Finish', 'Unaligned'], 'Timber': ['Broken', 'Chipped', 'Colour', 'Incorrect'], 'Legs': ['Wobbly', 'Damaged', 'Colour', 'Incorrect', 'Missing from order', 'Fitting'] }, 'Assembly': { 'Caps': ['Loose', 'Broken', 'Not sitting flush'], 'Installed incorrectly': ['Loose', 'Gap', 'Uneven', 'Height'], 'Bracket, Spacer': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Anchor Clip': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Glue': ['Detatched'], 'Hinges': ['Detatched', 'Jammed', 'Unaligned'], 'Knock ins': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Screws, bolts, rivets,  washers': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Pins': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Glider Rail': ['Damaged', 'Alignment'], 'Dowel Hole': ['Damaged', 'Unaligned'] }, 'Cover': { 'Dacron': ['Damaged'], 'Fabric': ['Fraying', 'Torn', 'Creased', 'Dirty', 'Pilling', 'Stretched', 'Puckering', 'Hole', 'Fading', 'Incorrect', 'Compression marks', 'Colour'], 'Fitting': ['Fitted incorrectly', 'Sagging', 'Askew', 'Pooling'], 'Leather': ['Torn', 'Dirty', 'Saggy', 'Fading', 'Hole', 'Fading', 'Incorrect', 'Mark', 'Scrached', 'Peeling', 'Colour'], 'Mesh': ['Damaged'], 'Nylon Ratchet strip': ['Damaged'], 'Rattan': ['Damaged'], 'Stitching': ['Damaged', 'Undone', 'Pulls', 'Alignment'], 'Zipper': ['Damaged'], 'Velcro': ['Damaged', 'Alignment'] }, 'Insert': { 'Foam': ['Bulging', 'Compressed', 'Lumpy', 'Too hard', 'Dipping'], 'Feathers': ['Bulging', 'Compressed', 'Lumpy', 'Too hard', 'Falling out', 'Smells', 'Dipping'], 'Foam Overlay': ['Bulging', 'Compressed', 'Lumpy'], 'Filling': ['Incorrect', 'Size'], 'Spring': ['Comfort'], 'Dome': ['Bulging', 'Compressed', 'Lumpy'], 'Mattress': ['Bulging', 'Compressed', 'Lumpy', 'Dirty'] }, 'Electrical': { 'Controller boxes': ['Faulty', 'Disconnected'], 'Headrest Motor': ['Faulty', 'Disconnected', 'Jammed'], 'Footrest Motor': ['Faulty', 'Disconnected', 'Jammed'], 'Transformer': ['Faulty', 'Disconnected'], 'IR': ['Faulty', 'Disconnected'], 'Seat wires': ['Faulty', 'Disconnected'], 'DMC': ['Faulty', 'Disconnected'] }, 'Frame': { 'Mechanism': ['Damaged', 'Jammed', 'Alignment', 'Noise'], 'Shape': ['Wobbly', 'Warped', 'Tipping', 'Weld', 'Alignment'], 'Clamp': ['Damaged', 'Rusted', 'Alignment', 'Rubbing'], 'Pulmaflex': ['Damaged', 'loose', 'Rubbing'], 'Gas strut': ['Damaged', 'Jammed', 'Size'], 'Finish': ['Peeling', 'Damaged', 'Colour', 'Rusted', 'Paint'], 'Wagon Wheel': ['Alignment', 'Wobbly'], 'Table': ['glass', 'Timber', 'Marble'] }, 'Kingcare': { 'Repairs': [''], 'Recovered': [''] }, 'Order': { 'Delivery': ['Incorrect', 'Damaged', 'Missing from order', 'Cancelled'], 'Dispatch': ['Incorrect', 'Missing from order'], 'Delivery': ['Incorrect', 'Missing from order', 'Damaged', 'Assembly'], 'Warehouse': ['Incorrect', 'Missing from order', 'Damaged'], 'Showroom': ['Incorrect', 'Missing from order'], 'GL': ['Incorrect', 'Missing from order', 'Damaged', 'Remake'], 'Customer': ['Incorrect'] } }
+        var categoryObject = {'Accessories':{'Battery': ['Broken','Not working','Missing from order','Other'],'Joiners': ['Broken','Missing from order','Incorrect','Other'],'LED': ['Broken','Missing from order','Other'],'Sofa Light': ['Broken','Colour','Missing from order','Incorrect','Finish','Other'],'Table': ['Broken','Colour','Missing from order','Incorrect','Finish','Unaligned','Other'],'Timber': ['Broken','Chipped','Colour','Incorrect','Other'],'Legs': ['Wobbly','Damaged','Colour','Incorrect','Missing from order','Fitting','Other'],'Other':[]},'Assembly':{'Caps': ['Loose','Broken','Not sitting flush','Other'],'Installed incorrectly': ['Loose','Gap','Uneven','Height','Other'],'Bracket, Spacer': ['Detatched','Jammed','Loose','Not sitting flush','Unaligned','Other'],'Anchor Clip': ['Detatched','Jammed','Loose','Not sitting flush','Unaligned','Other'],'Glue': ['Detatched','Other'],'Hinges': ['Detatched','Jammed','Unaligned','Other'],'Knock ins': ['Detatched','Jammed','Loose','Not sitting flush','Unaligned','Other'],'Screws, bolts, rivets,  washers': ['Detatched','Jammed','Loose','Not sitting flush','Unaligned','Other'],'Pins': ['Detatched','Jammed','Loose','Not sitting flush','Unaligned','Other'],'Glider Rail': ['Damaged','Alignment','Other'],'Dowel Hole': ['Damaged','Unaligned','Other'],'Other':[]},'Cover':{'Dacron': ['Damaged','Other'],'Fabric': ['Fraying','Torn','Creased','Dirty','Pilling','Stretched','Puckering','Hole','Fading','Incorrect','Compression marks','Colour','Other'],'Fitting': ['Fitted incorrectly','Sagging','Askew','Pooling','Other'],'Leather': ['Torn','Dirty','Saggy','Fading','Hole','Fading','Incorrect','Mark','Scrached','Peeling','Colour','Other'],'Mesh': ['Damaged','Other'],'Nylon Ratchet strip': ['Damaged','Other'],'Rattan': ['Damaged','Other'],'Stitching': ['Damaged','Undone','Pulls','Alignment','Other'],'Zipper': ['Damaged','Other'],'Velcro': ['Damaged','Alignment','Other'],'Other':[]},'Insert':{'Foam': ['Bulging','Compressed','Lumpy','Too hard','Dipping','Other'],'Feathers': ['Bulging','Compressed','Lumpy','Too hard','Falling out','Smells','Dipping','Other'],'Foam Overlay': ['Bulging','Compressed','Lumpy','Other'],'Filling': ['Incorrect','Size','Other'],'Spring': ['Comfort','Other'],'Dome': ['Bulging','Compressed','Lumpy','Other'],'Mattress': ['Bulging','Compressed','Lumpy','Dirty','Other'],'Other':[]},'Electrical':{'Controller boxes': ['Faulty','Disconnected','Other'],'Headrest Motor': ['Faulty','Disconnected','Jammed','Other'],'Footrest Motor': ['Faulty','Disconnected','Jammed','Other'],'Transformer': ['Faulty','Disconnected','Other'],'IR': ['Faulty','Disconnected','Other'],'Seat wires': ['Faulty','Disconnected','Other'],'DMC': ['Faulty','Disconnected','Other'],'Other':[]},'Frame':{'Mechanism': ['Damaged','Jammed','Alignment','Noise','Other'],'Shape': ['Wobbly','Warped','Tipping','Weld','Alignment','Other'],'Clamp': ['Damaged','Rusted','Alignment','Rubbing','Other'],'Pulmaflex': ['Damaged','loose','Rubbing','Other'],'Gas strut': ['Damaged','Jammed','Size','Other'],'Finish': ['Peeling','Damaged','Colour','Rusted','Paint','Other'],'Wagon Wheel': ['Alignment','Wobbly','Other'],'Table': ['glass','Timber','Marble','Other'],'Other':[]},'Kingcare':{'Repairs': [''],'Recovered': [''],'Other':[]},'Order':{'Delivery': ['Incorrect','Damaged','Missing from order','Cancelled','Other'],'Dispatch': ['Incorrect','Missing from order','Other'],'Delivery': ['Incorrect','Missing from order','Damaged','Assembly','Other'],'Warehouse': ['Incorrect','Missing from order','Damaged','Other'],'Showroom': ['Incorrect','Missing from order','Other'],'GL': ['Incorrect','Missing from order','Damaged','Remake','Other'],'Customer': ['Incorrect','Other'],'Other':[]},'Other':{}}
 
 
         // var categoryObject = {
@@ -68,6 +77,20 @@
                 }
             }
         }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
     </script>
 </head>
 
@@ -88,8 +111,6 @@
             <option value="" selected="selected">Please select Category 2 first</option>
         </select>
         <br><br>
-        <input type="submit" value="Submit">
-        <br><br>
         <input type="checkbox" id="hazard" name="hazardBox" value="isSafetyHazard">
         <label for="hazard"> Is this a safety hazard?</label>
         <br><br>
@@ -101,9 +122,11 @@
         <br><br>
         <input type="checkbox" id="KingCare" name="KingCare" value="isKCR">
         <label for="function"> Is this a KingCare issue?</label>
-        
-    </form>
+        <br><br>
+        <input type="submit" value="Submit">
 
+    </form>
+    
 </body>
 
 </html>
