@@ -1,10 +1,96 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+
+
+        var categoryObject = { 'Accessories': { 'Battery': ['Broken', 'Not working', 'Missing from order'], 'Joiners': ['Broken', 'Missing from order', 'Incorrect'], 'LED': ['Broken', 'Missing from order'], 'Sofa Light': ['Broken', 'Colour', 'Missing from order', 'Incorrect', 'Finish'], 'Table': ['Broken', 'Colour', 'Missing from order', 'Incorrect', 'Finish', 'Unaligned'], 'Timber': ['Broken', 'Chipped', 'Colour', 'Incorrect'], 'Legs': ['Wobbly', 'Damaged', 'Colour', 'Incorrect', 'Missing from order', 'Fitting'] }, 'Assembly': { 'Caps': ['Loose', 'Broken', 'Not sitting flush'], 'Installed incorrectly': ['Loose', 'Gap', 'Uneven', 'Height'], 'Bracket, Spacer': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Anchor Clip': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Glue': ['Detatched'], 'Hinges': ['Detatched', 'Jammed', 'Unaligned'], 'Knock ins': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Screws, bolts, rivets,  washers': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Pins': ['Detatched', 'Jammed', 'Loose', 'Not sitting flush', 'Unaligned'], 'Glider Rail': ['Damaged', 'Alignment'], 'Dowel Hole': ['Damaged', 'Unaligned'] }, 'Cover': { 'Dacron': ['Damaged'], 'Fabric': ['Fraying', 'Torn', 'Creased', 'Dirty', 'Pilling', 'Stretched', 'Puckering', 'Hole', 'Fading', 'Incorrect', 'Compression marks', 'Colour'], 'Fitting': ['Fitted incorrectly', 'Sagging', 'Askew', 'Pooling'], 'Leather': ['Torn', 'Dirty', 'Saggy', 'Fading', 'Hole', 'Fading', 'Incorrect', 'Mark', 'Scrached', 'Peeling', 'Colour'], 'Mesh': ['Damaged'], 'Nylon Ratchet strip': ['Damaged'], 'Rattan': ['Damaged'], 'Stitching': ['Damaged', 'Undone', 'Pulls', 'Alignment'], 'Zipper': ['Damaged'], 'Velcro': ['Damaged', 'Alignment'] }, 'Insert': { 'Foam': ['Bulging', 'Compressed', 'Lumpy', 'Too hard', 'Dipping'], 'Feathers': ['Bulging', 'Compressed', 'Lumpy', 'Too hard', 'Falling out', 'Smells', 'Dipping'], 'Foam Overlay': ['Bulging', 'Compressed', 'Lumpy'], 'Filling': ['Incorrect', 'Size'], 'Spring': ['Comfort'], 'Dome': ['Bulging', 'Compressed', 'Lumpy'], 'Mattress': ['Bulging', 'Compressed', 'Lumpy', 'Dirty'] }, 'Electrical': { 'Controller boxes': ['Faulty', 'Disconnected'], 'Headrest Motor': ['Faulty', 'Disconnected', 'Jammed'], 'Footrest Motor': ['Faulty', 'Disconnected', 'Jammed'], 'Transformer': ['Faulty', 'Disconnected'], 'IR': ['Faulty', 'Disconnected'], 'Seat wires': ['Faulty', 'Disconnected'], 'DMC': ['Faulty', 'Disconnected'] }, 'Frame': { 'Mechanism': ['Damaged', 'Jammed', 'Alignment', 'Noise'], 'Shape': ['Wobbly', 'Warped', 'Tipping', 'Weld', 'Alignment'], 'Clamp': ['Damaged', 'Rusted', 'Alignment', 'Rubbing'], 'Pulmaflex': ['Damaged', 'loose', 'Rubbing'], 'Gas strut': ['Damaged', 'Jammed', 'Size'], 'Finish': ['Peeling', 'Damaged', 'Colour', 'Rusted', 'Paint'], 'Wagon Wheel': ['Alignment', 'Wobbly'], 'Table': ['glass', 'Timber', 'Marble'] }, 'Kingcare': { 'Repairs': [''], 'Recovered': [''] }, 'Order': { 'Delivery': ['Incorrect', 'Damaged', 'Missing from order', 'Cancelled'], 'Dispatch': ['Incorrect', 'Missing from order'], 'Delivery': ['Incorrect', 'Missing from order', 'Damaged', 'Assembly'], 'Warehouse': ['Incorrect', 'Missing from order', 'Damaged'], 'Showroom': ['Incorrect', 'Missing from order'], 'GL': ['Incorrect', 'Missing from order', 'Damaged', 'Remake'], 'Customer': ['Incorrect'] } }
+
+
+        // var categoryObject = {
+        // // organise these as hierarchy
+        //   "Accessory": {
+        //     "Battery": ["Not working"],
+        //     "Joiner": ["Cut", "Not installing"],
+        //     "Sofa Light": ["Variables", "Operators", "Functions", "Conditions"]    
+        //   },
+        //   "Assembly": {
+        //     "Caps": ["Loose", "Not flush"],
+        //     "Dowel hole": ["Missing material", "Not aligned"]
+        //   },
+        //   "Cover": {
+        //     "Fabric": ["Colour", "Fraying", "Pilling"],
+        //     "Stitching": ["Loose", "Alignment"]
+        //   },
+        //   "Insert": {
+        //     "Fabric": ["Colour", "Fraying", "Pilling"],
+        //     "Stitching": ["Loose", "Alignment"]
+        //   },
+        //   "Electrical": {
+        //     "Fabric": ["Colour", "Fraying", "Pilling"],
+        //     "Stitching": ["Loose", "Alignment"]
+        //   },
+        //   "KingCare": {
+        //     "Fabric": ["Colour", "Fraying", "Pilling"],
+        //     "Stitching": ["Loose", "Alignment"]
+        //   },
+        //   "Ordering": {
+        //     "Fabric": ["Colour", "Fraying", "Pilling"],
+        //     "Stitching": ["Loose", "Alignment"]
+        //   }
+
+        // }
+        window.onload = function () {
+            var category1 = document.getElementById("cat1");
+            var category2 = document.getElementById("cat2");
+            var category3 = document.getElementById("cat3");
+            for (var x in categoryObject) {
+                category1.options[category1.options.length] = new Option(x, x);
+            }
+            category1.onchange = function () {
+                //empty Chapters- and Topics- dropdowns
+                category2.length = 1;
+                category3.length = 1;
+                //display correct values
+                for (var y in categoryObject[this.value]) {
+                    category2.options[category2.options.length] = new Option(y, y);
+                }
+            }
+            category2.onchange = function () {
+                //empty Chapters dropdown
+                category3.length = 1;
+                //display correct values
+                var z = categoryObject[category1.value][this.value];
+                for (var i = 0; i < z.length; i++) {
+                    category3.options[category3.options.length] = new Option(z[i], z[i]);
+                }
+            }
+        }
+    </script>
+</head>
+
 <body>
 
-<h1>Hello World!</h1>
+    <h1>Cascading Dropdown Example</h1>
 
-<p>My first paragraph.</p>
+    <form name="form1" id="form1" action="/action_page.php">
+        Category 1: <select name="cat1" id="cat1">
+            <option value="" selected="selected">Select Category 1</option>
+        </select>
+        <br><br>
+        Category 2: <select name="cat2" id="cat2">
+            <option value="" selected="selected">Please select Category 1 first</option>
+        </select>
+        <br><br>
+        Category 3: <select name="cat3" id="cat3">
+            <option value="" selected="selected">Please select Category 2 first</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
 
 </body>
+
 </html>
