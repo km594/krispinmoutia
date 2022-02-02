@@ -1,13 +1,569 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krispin Moutia</title>
-</head>
+<html>
+<title>Krispin Moutia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="icon" href="https://krispinm.w3spaces.com/logo-2530x2530.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+<style>
+    .dev-hide {
+        /* display: none !important; */
+    }
+
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Ubuntu", sans-serif
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    ul#interests>li {
+        float: left;
+        margin: 20px;
+    }
+
+    .poster-lg {
+        height: 40vh;
+    }
+
+    .poster-md {
+        height: 33vh;
+    }
+
+    .poster-sm {
+        height: 100%;
+        /* height: 33vh; */
+        width: 100%;
+    }
+
+    .poster-1-lg {
+        height: 20vh;
+    }
+
+    .background {
+        background-color: rgba(0, 0, 0, 0);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        transition: opacity 0.3s;
+    }
+
+    .background>div {
+        opacity: 0;
+    }
+
+    .background:hover {
+        background-color: black;
+        opacity: 0.85;
+    }
+
+    .background:hover>div {
+        opacity: 0.8;
+        color: white;
+    }
+
+    .slideUp {
+        animation-name: slideUp;
+        -webkit-animation-name: slideUp;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(70%);
+        }
+
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+        }
+    }
+
+    @-webkit-keyframes slideUp {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(70%);
+        }
+
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+        }
+    }
+
+    #topnav {
+        transition: top 0.3s;
+    }
+
+    #hamburger-menu {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        transition: top 0.3s;
+    }
+</style>
+
 <body>
-    Hi there!
-    If you're interested, please head over to my <a href="https://krispinm.w3spaces.com">site</a> hosted on w3spaces. Thanks!
+
+    <!-- Navbar (sit on top) -->
+    <div id="topnav" class="w3-top w3-border-bottom">
+        <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>KM</b></a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <a href="javascript:void(0);"
+                class="w3-bar-item w3-right w3-button icon w3-hide-large w3-hide-medium w3-show-small"
+                onclick="toggleShow('hamburger-menu');">&#9776;</a>
+            <div id="navbar-items" class="w3-right w3-hide-small">
+                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+                <a href="#work" class="w3-bar-item w3-button">Work</a>
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                <a href="javascript:void(0)" class="w3-bar-item w3-button">CV</a>
+                <!-- <a href="https://krispinm.w3spaces.com/resume" class="w3-bar-item w3-button">CV</a> -->
+                <!-- add flip transition to resume page? -->
+            </div>
+        </div>
+        <div id="hamburger-menu" class="w3-bar-block w3-hide w3-hide-medium w3-hide-large w3-white w3-card-4">
+            <ul class="w3-ul w3-hoverable">
+                <li><a href="#home" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">Home</a></li>
+                <li><a href="#projects" class="w3-bar-item w3-button"
+                        onclick="toggleShow('hamburger-menu')">Projects</a></li>
+                <li><a href="#work" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">Work</a></li>
+                <li><a href="#about" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">About</a></li>
+                <li><a href="#contact" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">Contact</a>
+                </li>
+                <li><a href="javascript:void(0)" class="w3-bar-item w3-button"
+                        onclick="toggleShow('hamburger-menu')">CV</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="" src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/logo-2530x2530.png"
+            alt="Architecture" width="1500" height="800" style="object-fit: contain;max-width: 100%" loading="lazy">
+        <div class="w3-display-topmiddle w3-margin-top w3-center" style="margin-top: 5vh !important;">
+            <h1 class="w3-xxlarge w3-text-white"><span
+                    class="w3-padding w3-bar-block w3-black w3-opacity-min w3-hide-small w3-hide-medium"><b class="">Hi,
+                        I'm Krispin <br></b></span><span class="w3-hide-small w3-text-light-grey w3-xlarge"
+                    style="white-space: nowrap;">Analyst | Developer | Engineer</span></h1>
+        </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+
+        <!-- Project Section -->
+        <section class="">
+            <div class="w3-container w3-padding-32" id="projects">
+                <button class="w3-btn w3-button" onclick="toggleShow('projects-toggle')">
+                    <h3 class="w3-border-bottom w3-border-light-grey">Projects</h3>
+                </button>
+            </div>
+            <div id="projects-toggle" class="w3-row-padding w3-show dev-hide">
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-display-topleft w3-black w3-padding">Campbelltown Businesses
+                        </div>
+                        <iframe title="campbelltown-business-data - Page 1" width="100%" height="100%"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9"
+                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-display-topleft w3-black w3-padding">Registered Engineers</div>
+                        <iframe title="register-engineering-2020" width="100%" height="100%"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection"
+                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-display-topleft w3-black w3-padding">Collapsible Press</div>
+                        <model-viewer id="press" style="height: 450px;width: 100%;" bounds="tight"
+                            src="https://raw.githubusercontent.com/km594/krispinmoutia/master/20t-shoppress.gltf" ar
+                            ar-modes="" camera-controls poster="" shadow-intensity="0" exposure="0.5"
+                            camera-orbit="-0.2875deg 157.5deg auto">
+                        </model-viewer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="">
+            <div class="w3-container w3-padding-32" id="work">
+                <button class="w3-btn w3-button" onclick="toggleShow('work-toggle')">
+                    <h3 class="w3-border-bottom w3-border-light-grey">Work</h3>
+                </button>
+            </div>
+            <div id="work-toggle" class="w3-row-padding w3-show dev-hide">
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-white w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-digital-marketing-1433427_1280.jpg')">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/qms-1.png');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Quality Management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/mechanical-1.jpg');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Mechanical Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-white w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/bpmn-example.png');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Operations &amp; Planning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-white w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-questions.jpg');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-white w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-questions.jpg');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section>
+            <div class="w3-container w3-padding-32" id="about">
+                <button class="w3-btn w3-button" onclick="toggleShow('about-toggle')">
+                    <h3 class="w3-border-bottom w3-border-light-grey">About</h3>
+                </button>
+                <div id="about-toggle" class="w3-row-padding w3-show">
+                    <p>
+                        I'm a hard-working, multi-disciplinary professional, passionate about design, control, and
+                        quality.
+                    </p>
+                    <p>My interests include:</p>
+                    <ul id="interests" class="">
+                        <li>Coding</li>
+                        <li>Muay Thai</li>
+                        <li>Gaming</li>
+                        <li>Guitar</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-grayscale w3-hide">
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+                    <h3>John Doe</h3>
+                    <p class="w3-opacity">CEO & Founder</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                </div>
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+                    <h3>Jane Doe</h3>
+                    <p class="w3-opacity">Architect</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                </div>
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+                    <h3>Mike Ross</h3>
+                    <p class="w3-opacity">Architect</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                </div>
+                <div class="w3-col l3 m6 w3-margin-bottom">
+                    <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
+                    <h3>Dan Star</h3>
+                    <p class="w3-opacity">Architect</p>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="w3-container w3-padding-32" id="contact">
+                <button class="w3-btn w3-button" onclick="toggleShow('contact-toggle')">
+                    <h3 class="w3-border-bottom w3-border-light-grey">Contact</h3>
+                </button>
+                <div id="contact-toggle" class="w3-hide">
+                    <p>Lets get in touch and talk about your next project.</p>
+                    <form action="/action_page.php" target="_blank">
+                        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required
+                            name="Email">
+                        <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required
+                            name="Subject">
+                        <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required
+                            name="Comment">
+                        <button class="w3-button w3-black w3-section" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Image of location/map -->
+            <!-- <div class="w3-container">
+                <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
+            </div> -->
+        </section>
+
+        <!-- End page content -->
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <p class="">Written by me, powered (with thanks) by <a href="https://www.w3schools.com/w3css/default.asp"
+                title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+
+    <script>
+        // toggles display of elements selected by id
+        function toggleShow(id) {
+            var x = document.getElementById(id);
+            // TODO: check display state
+            // show
+            if (!x.classList.contains("w3-show")) {
+                x.classList.add("w3-show");
+                if (x.classList.contains("w3-hide")) {
+                    x.classList.remove("w3-hide");
+                }
+            } else {
+                //hide
+                if (x.classList.contains("w3-show")) {
+                    x.classList.remove("w3-show");
+                }
+                setTimeout(() => { x.classList.add("w3-hide"); }, 300);
+            }
+            setMenuPos();
+            // setTimeout(() => { setMenuPos()}, 300);
+        }
+
+        function setMenuPos() {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const topnav = document.getElementById('topnav');
+            if (hamburgerMenu.classList.contains("w3-show")) {
+                hamburgerMenu.style.top = topnav.offsetHeight.toString() + 'px'
+            } else {
+                hamburgerMenu.style.top = '-600px';
+            }
+        }
+
+        /*
+        window.onscroll = function() {toggleShow()};
+        
+        function toggleShow() {
+          if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+            document.getElementById("nav").classList.add('slideUp');
+          }
+        } */
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var mainContent = document.getElementById("main");
+            // check for screen width
+            if (window.innerWidth > 1000) {
+                // check for sidebar state
+                if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                    sidebar.style.width = "33%";
+                    mainContent.style.marginLeft = "33%";
+                } else {
+                    sidebar.style.width = "0";
+                    mainContent.style.marginLeft = "0";
+                }
+            } else if (window.innerWidth > 600) {
+                if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                    sidebar.style.width = "50%";
+                    mainContent.style.marginLeft = "50%";
+                } else {
+                    sidebar.style.width = "0";
+                    mainContent.style.marginLeft = "0";
+                }
+            } else {
+                if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                    sidebar.style.width = "100%";
+                    mainContent.style.marginLeft = "100%";
+                } else {
+                    sidebar.style.width = "0";
+                    mainContent.style.marginLeft = "0";
+                }
+            }
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            toggleShow("sidebar-overlay");
+        }
+
+        var prevScrollpos = window.pageYOffset;
+        /* TODO: For production, allow user to select dark mode via toggle */
+        window.onload = function () {
+            var arr = document.getElementsByTagName("code");
+            for (var e of arr) {
+                e.classList.add("dark-mode");
+            }
+        }
+
+        /* function collapseMenu() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+ */
+        function hideSplash(e) {
+            e.parentNode.classList.add("w3-hide");
+            document.getElementById("main-content").classList.replace("w3-hide", "w3-show");
+            document.getElementById("summary-button").classList.replace("w3-hide", "w3-show");
+            document.getElementById("topnav").classList.replace("w3-hide", "w3-show");
+            document.getElementsByTagName("footer")[0].classList.remove("w3-bottom");
+            // alert("Element: " + e.parentNode.id + " hidden");
+            toggleShow("main-content");
+            // toggleShow("navbar");
+        }
+
+        function toggleDisplay(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function toggleResponsive(id) {
+            var x = document.getElementById(id);
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+
+        /* Make topnav link active */
+        function activateLink(link) {
+            var x = document.getElementById("topnav");
+            for (const a of x.children[0].children) {
+                if (a.classList.contains("active")) {
+                    a.classList.remove("active");
+                    a.classList.remove("w3-indigo");
+                }
+            }
+            link.classList.add("w3-indigo");
+            link.classList.add("active");
+        }
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            // collapsing navbar
+            const currentScrollPos = window.pageYOffset;
+            const topnav = document.getElementById("topnav");
+            const hamburgerMenu = document.getElementById("hamburger-menu");
+            const topnavHeight = topnav.style.height
+            // hide hamburger-menu
+            // if(!document.getElementById("hamburger-menu").classList.contains("w3-hide")){
+            //     toggleShow("hamburger-menu");
+            // }
+            hamburgerMenu.style.top = "-600px";
+            if (hamburgerMenu.classList.contains('w3-show')) {
+                toggleShow("hamburger-menu");
+                // setTimeout(() => {  toggleShow("hamburger-menu"); }, Number.parseFloat(window.getComputedStyle(hamburgerMenu).getPropertyValue('transition-duration').slice(0,window.getComputedStyle(hamburgerMenu).getPropertyValue('transition-duration').indexOf('s')))*1000);     
+            }
+            if (prevScrollpos > currentScrollPos) { //scrolling down
+                // move navbar to top of screen
+                topnav.style.top = "0";
+            } else { //scrolling up
+                // move navbar off page
+                topnav.style.top = "-60px";
+            }
+            // }
+            prevScrollpos = currentScrollPos;
+            if (prevScrollpos == 0) {
+                topnav.classList.remove("w3-border-bottom");
+            } else {
+                if (!topnav.classList.contains("w3-border-bottom")) {
+                    topnav.classList.add("w3-border-bottom");
+                }
+            }
+            // disappearing left info panel
+            // var infoPanelMaxPos = infoPanel.getBoundingClientRect().height;
+            // var infoPanelMaxPos = infoPanel.getBoundingClientRect().top + infoPanel.getBoundingClientRect().height;
+            // var infoPanelMaxPos = infoPanel.getBoundingClientRect().top - infoPanel.getBoundingClientRect().height;
+
+        }
+
+    </script>
+
+
 </body>
+
 </html>
