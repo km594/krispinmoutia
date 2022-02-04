@@ -38,8 +38,15 @@
     }
 
     ul#interests>li {
-        float: left;
-        margin: 20px;
+        /* float: left;
+        margin: 20px; */
+    }
+
+    .about-list > li:hover{
+        background-color: lightgrey;
+    }
+    .about-list > li:hover > ul{
+        background-color: black;
     }
 
     .poster-lg {
@@ -55,10 +62,17 @@
         /* height: 33vh; */
         width: 100%;
     }
-
+    
     .poster-1-lg {
         height: 20vh;
     }
+    @media (max-height: 600px) {
+        .poster-1-lg {
+            height: 40vh;
+        }
+        
+    }
+
 
     .background {
         background-color: rgba(0, 0, 0, 0);
@@ -174,8 +188,10 @@
         </div>
     </header>
 
+    <a href="#projects" class="w3-btn w3-button w3-bottom w3-opacity w3-margin-top w3-bar" onclick="toggleShow('page-container');toggleShow('footer');this.style.display='none'">Start</a>
+
     <!-- Page content -->
-    <div class="w3-content w3-padding" style="max-width:1564px">
+    <div id="page-container" class="w3-content w3-padding w3-hide" style="max-width:1564px">
 
         <!-- Project Section -->
         <section class="">
@@ -296,15 +312,27 @@
                 </button>
                 <div id="about-toggle" class="w3-row-padding w3-show">
                     <p>
-                        I'm a hard-working, multi-disciplinary professional, passionate about design, control, and
-                        quality.
+                        I have always struggled (and continue to struggle) to express myself, mostly due to my analytical (critical) nature - this website allows me to showcase some of the work that I can do so, that I am not solely relying on selling my capabilities through writing.
                     </p>
-                    <p>My interests include:</p>
-                    <ul id="interests" class="">
-                        <li>Coding</li>
-                        <li>Muay Thai</li>
-                        <li>Gaming</li>
-                        <li>Guitar</li>
+                    <p>This being said, I have a few words that help describe what I value and who I am (and who I am not).</p>
+                    <p>I am:</p>
+                    <ul id="about-details" class="">
+                        <li>
+                            <div id="about-details-1"><button class="w3-btn w3-button w3-left-align w3-bar" onclick="toggleShow('target-about-details-1')">Keen</button></div>
+                            <ul id="target-about-details-1" class="w3-hide">
+                                <br>
+                                <li>I love efficiency, and generally always try to determine better ways of working</li><br>
+                                <li>I am eager to learn new things - for example, improving the quality at King Living involved identifying sub-optimal processes and tools, most of which I learned how to use in order to understand how to improve them.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div id="about-details-2"><button class="w3-btn w3-button w3-left-align w3-bar" onclick="toggleShow('target-about-details-2')">Adaptable</button></div>
+                            <ul id="target-about-details-2" class="w3-hide">
+                                <br>
+                                <li>I can handle steep learning curves, especially with technical content</li><br>
+                                <li>I have a wide range of interests - this is especially useful for facing complex problems requiring multiple disciplines</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -377,7 +405,7 @@
 
 
     <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-16">
+    <footer id="footer" class="w3-center w3-black w3-padding-16 w3-hide">
         <p class="">Written by me, powered (with thanks) by <a href="https://www.w3schools.com/w3css/default.asp"
                 title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
     </footer>
@@ -398,7 +426,11 @@
                 if (x.classList.contains("w3-show")) {
                     x.classList.remove("w3-show");
                 }
-                setTimeout(() => { x.classList.add("w3-hide"); }, 300);
+                if(id == "hamburger-menu"){
+                    setTimeout(() => { x.classList.add("w3-hide"); }, 300);
+                }else{
+                    x.classList.add("w3-hide");
+                }
             }
             setMenuPos();
             // setTimeout(() => { setMenuPos()}, 300);
