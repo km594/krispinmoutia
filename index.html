@@ -11,7 +11,14 @@
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap"
     rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css"
+    integrity="sha512-tk4nGrLxft4l30r9ETuejLU0a3d7LwMzj0eXjzc16JQj+5U1IeVoCuGLObRDc3+eQMUcEQY1RIDPGvuA7SNQ2w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+    /* TODO: Move to stylesheet.css */
     .dev-hide {
         /* display: none !important; */
     }
@@ -42,10 +49,11 @@
         margin: 20px; */
     }
 
-    .about-list > li:hover{
+    .about-list>li:hover {
         background-color: lightgrey;
     }
-    .about-list > li:hover > ul{
+
+    .about-list>li:hover>ul {
         background-color: black;
     }
 
@@ -62,15 +70,16 @@
         /* height: 33vh; */
         width: 100%;
     }
-    
+
     .poster-1-lg {
         height: 20vh;
     }
+
     @media (max-height: 600px) {
         .poster-1-lg {
             height: 40vh;
         }
-        
+
     }
 
 
@@ -95,6 +104,12 @@
     .background:hover>div {
         opacity: 0.8;
         color: white;
+    }
+
+    .centre-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .slideUp {
@@ -146,17 +161,16 @@
     <!-- Navbar (sit on top) -->
     <div id="topnav" class="w3-top">
         <div class="w3-bar w3-black w3-wide w3-padding w3-card">
-            <a href="#home" class="w3-bar-item w3-button"><b>KM</b></a>
+            <a href="#" class="w3-bar-item w3-button"><b>KM</b></a>
             <!-- Float links to the right. Hide them on small screens -->
             <a href="javascript:void(0);"
                 class="w3-bar-item w3-right w3-button icon w3-hide-large w3-hide-medium w3-show-small"
                 onclick="toggleShow('hamburger-menu');">&#9776;</a>
             <div id="navbar-items" class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About me</a>
                 <a href="#projects" class="w3-bar-item w3-button">Projects</a>
                 <a href="#work" class="w3-bar-item w3-button">Work</a>
-                <a href="#about" class="w3-bar-item w3-button">About</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-                <a href="javascript:void(0)" class="w3-bar-item w3-button">CV</a>
+                <a href="https://km594.github.io/krispinmoutia/resume.html" class="w3-bar-item w3-button">CV</a>
                 <!-- <a href="https://krispinm.w3spaces.com/resume" class="w3-bar-item w3-button">CV</a> -->
                 <!-- add flip transition to resume page? -->
             </div>
@@ -167,10 +181,10 @@
                 <li><a href="#projects" class="w3-bar-item w3-button"
                         onclick="toggleShow('hamburger-menu')">Projects</a></li>
                 <li><a href="#work" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">Work</a></li>
-                <li><a href="#about" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">About</a></li>
-                <li><a href="#contact" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">Contact</a>
+                <li><a href="#about" class="w3-bar-item w3-button" onclick="toggleShow('hamburger-menu')">About me</a>
                 </li>
-                <li><a href="javascript:void(0)" class="w3-bar-item w3-button"
+                </li>
+                <li><a href="https://km594.github.io/krispinmoutia/resume.html" class="w3-bar-item w3-button"
                         onclick="toggleShow('hamburger-menu')">CV</a></li>
             </ul>
         </div>
@@ -178,8 +192,10 @@
 
     <!-- Header -->
     <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="" src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/logo-2530x2530.png"
-            alt="Architecture" style="object-fit: contain;max-width: 100%;margin-top: max(5vh, 55px)" loading="lazy">
+        <img class="centre-image"
+            src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/logo-2530x2530.png"
+            alt="Architecture" style="object-fit: contain;max-width: 100%;margin-top: max(5vh, 55px);max-height: 100vh;"
+            loading="lazy">
         <div class="w3-display-topmiddle w3-margin-top w3-center" style="margin-top: max(5vh, 55px) !important;">
             <h1 class="w3-xxlarge w3-text-white"><span
                     class="w3-padding w3-bar-block w3-black w3-opacity-min w3-hide-small w3-hide-medium"><b class="">Hi,
@@ -188,150 +204,96 @@
         </div>
     </header>
 
-    <a href="#projects" class="w3-btn w3-button w3-bottom w3-opacity w3-margin-top w3-bar" onclick="toggleShow('page-container');toggleShow('footer');this.style.display='none'">Start</a>
+    <a href="#about" class="w3-btn w3-button w3-bottom w3-margin-top w3-bar w3-padding-16"
+        onclick="toggleShow('page-container');toggleShow('footer');this.style.display='none'">Start</a>
 
     <!-- Page content -->
     <div id="page-container" class="w3-content w3-padding w3-hide" style="max-width:1564px">
 
-        <!-- Project Section -->
-        <section class="">
-            <div class="w3-container w3-padding-32" id="projects">
-                <button class="w3-btn w3-button" onclick="toggleShow('projects-toggle')">
-                    <h3 class="w3-border-bottom w3-border-light-grey">Projects</h3>
-                </button>
-            </div>
-            <div id="projects-toggle" class="w3-row-padding w3-show dev-hide">
-                <div class="w3-col l6 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">Campbelltown Businesses
-                        </div>
-                        <iframe title="campbelltown-business-data - Page 1" width="100%" height="100%"
-                            src="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9"
-                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
-                        </iframe>
-                    </div>
-                </div>
-                <div class="w3-col l6 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">Registered Engineers</div>
-                        <iframe title="register-engineering-2020" width="100%" height="100%"
-                            src="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection"
-                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
-                        </iframe>
-                    </div>
-                </div>
-                <div class="w3-col l6 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">Collapsible Press</div>
-                        <model-viewer id="press" style="height: 450px;width: 100%;" bounds="tight"
-                            src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/20t-shoppress.gltf" ar
-                            ar-modes="" camera-controls poster="" shadow-intensity="0" exposure="0.5"
-                            camera-orbit="-0.2875deg 157.5deg auto">
-                        </model-viewer>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Section -->
-        <section class="">
-            <div class="w3-container w3-padding-32" id="work">
-                <button class="w3-btn w3-button" onclick="toggleShow('work-toggle')">
-                    <h3 class="w3-border-bottom w3-border-light-grey">Work</h3>
-                </button>
-            </div>
-            <div id="work-toggle" class="w3-row-padding w3-show dev-hide">
-                <div class="w3-col l4 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-black w3-padding poster-1-lg background"
-                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-digital-marketing-1433427_1280.jpg')">
-                            <div class="w3-black w3-display-middle w3-block">
-                                <p>Analytics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-padding poster-1-lg background"
-                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/qms-1.png');">
-                            <div class="w3-black w3-display-middle w3-block">
-                                <p>Quality Management</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-padding poster-1-lg background"
-                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/mechanical-1.jpg');">
-                            <div class="w3-black w3-display-middle w3-block">
-                                <p>Mechanical Engineering</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-black w3-padding poster-1-lg background"
-                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/bpmn-example.png');">
-                            <div class="w3-black w3-display-middle w3-block">
-                                <p>Operations &amp; Planning</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-black w3-padding poster-1-lg background"
-                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-questions.jpg');">
-                            <div class="w3-black w3-display-middle w3-block">
-                                <p>Design</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-black w3-padding poster-1-lg background"
-                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-questions.jpg');">
-                            <div class="w3-black w3-display-middle w3-block">
-                                <p>Development</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- About Section -->
         <section>
             <div class="w3-container w3-padding-32" id="about">
-                <button class="w3-btn w3-button" onclick="toggleShow('about-toggle')">
-                    <h3 class="w3-border-bottom w3-border-light-grey">About</h3>
-                </button>
-                <div id="about-toggle" class="w3-row-padding w3-show">
+                <div class="w3-center">
+                    <button class="w3-btn w3-button" onclick="toggleShow('about-toggle')">
+                        <h3 class="w3-border-bottom w3-border-light-grey">About me</h3>
+                    </button>
+                </div>
+                <div id="about-toggle" class="w3-row-padding w3-show w3-large">
                     <p>
-                        I have always struggled (and continue to struggle) to express myself, mostly due to my analytical (critical) nature - this website allows me to showcase some of the work that I can do so, that I am not solely relying on selling my capabilities through writing.
+                        I'm an engineer with a background in mechanical and quality engineering,
+                        programming, and data analysis. Graduating from the University of Wollongong with a double
+                        degree in engineering and mathematics,
+                        I'm about applying my wide knowledge base to develop holistic solutions -
+                        from identifying process improvement opportunities to engaging in product design, my main goal
+                        is
+                        to ensure that anything I output is both soundly designed and cost effective.
                     </p>
-                    <p>This being said, I have a few words that help describe what I value and who I am (and who I am not).</p>
                     <p>I am:</p>
                     <ul id="about-details" class="">
                         <li>
-                            <div id="about-details-1"><button class="w3-btn w3-button w3-left-align w3-bar" onclick="toggleShow('target-about-details-1')">Keen</button></div>
+                            <div id="about-details-1"><button class="w3-btn w3-button w3-left-align w3-bar"
+                                    onclick="toggleShow('target-about-details-1')">Keen</button></div>
                             <ul id="target-about-details-1" class="w3-hide">
                                 <br>
-                                <li>I love efficiency, and generally always try to determine better ways of working</li><br>
-                                <li>I am eager to learn new things - for example, improving the quality at King Living involved identifying sub-optimal processes and tools, most of which I learned how to use in order to understand how to improve them.</li>
+                                <li>I am always for learning new things - having a working knowledge of the system you
+                                    are trying to improve is essential to designing your part to work with the whole
+                                </li><br>
+                                <li>I love automation and efficiency - I believe there are always ways to improve
+                                    processes and workflow, and I'm passionate about discovering them.</li>
                             </ul>
+                            <br>
                         </li>
                         <li>
-                            <div id="about-details-2"><button class="w3-btn w3-button w3-left-align w3-bar" onclick="toggleShow('target-about-details-2')">Adaptable</button></div>
+                            <div id="about-details-2"><button class="w3-btn w3-button w3-left-align w3-bar"
+                                    onclick="toggleShow('target-about-details-2')">Adaptable</button></div>
                             <ul id="target-about-details-2" class="w3-hide">
                                 <br>
-                                <li>I can handle steep learning curves, especially with technical content</li><br>
-                                <li>I have a wide range of interests - this is especially useful for facing complex problems requiring multiple disciplines</li>
+                                <li>I have good ideas; other people have good ideas too. I like to keep the end goal in
+                                    mind when working with others on a project - when someone comes up with an idea that
+                                    may be an improvement to mine, I'm on-board with testing it out and working with
+                                    them to achieve that goal</li><br>
+                                <li>I work well with steep learning curves - I proved this through having picked up
+                                    machine learning and Power FX as part of a data analysis and quality improvement
+                                    project I worked on whilst with King Living</li>
+                                <li>I have a wide range of interests - this is especially useful for facing complex
+                                    problems requiring multiple disciplines</li>
                             </ul>
+                            <br>
+                        </li>
+                        <li>
+                            <div id="about-details-3"><button class="w3-btn w3-button w3-left-align w3-bar"
+                                    onclick="toggleShow('target-about-details-3')">Focused</button></div>
+                            <ul id="target-about-details-3" class="w3-hide">
+                                <br>
+                                <li>I can remove distractions and work under pressure when required; I generally prefer
+                                    to work with hard deadlines, allowing me to prioritize more easily.</li><br>
+                            </ul>
+                            <br>
+                        </li>
+                        <li>
+                            <div id="about-details-4"><button class="w3-btn w3-button w3-left-align w3-bar"
+                                    onclick="toggleShow('target-about-details-4')">Observant</button></div>
+                            <ul id="target-about-details-4" class="w3-hide">
+                                <br>
+                                <li>I am detail-oriented - whether reviewing engineering drawings or code, when tasked
+                                    with editing I analyse everything, and pride myself on accuracy. In doing this, I
+                                    have found through my work that I prefer working using a Git workflow: write,
+                                    analyse/review, update, aiming for a low response time when I need to review
+                                    something</li><br>
+                            </ul>
+                            <br>
+                        </li>
+                        <li>
+                            <div id="about-details-5"><button class="w3-btn w3-button w3-left-align w3-bar"
+                                    onclick="toggleShow('target-about-details-5')">Patient</button></div>
+                            <ul id="target-about-details-5" class="w3-hide">
+                                <br>
+                                <li>As a father of two, I've learned that I am highly patient - I appreciate that
+                                    differences
+                                    in opinion on how best to move forward can happen, and can work with a variety of
+                                    personalities daily, collaborating on projects and in general business.</li><br>
+                            </ul>
+                            <br>
                         </li>
                     </ul>
                 </div>
@@ -372,8 +334,158 @@
             </div>
         </section>
 
+        <!-- Project Section -->
+        <section class="">
+            <div class="w3-container w3-padding-16" id="projects">
+                <div class="w3-center">
+                    <button class="w3-btn w3-button" onclick="toggleShow('projects-toggle')">
+                        <h3 class="w3-border-bottom w3-border-light-grey">Projects</h3>
+                    </button>
+                </div>
+            </div>
+            <div id="projects-toggle" class="w3-row-padding w3-show dev-hide">
+                <div class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left">
+                    <p>Here's a collection of the projects I have worked on (or am currently working on):</p>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="">
+                        <h3>Campbelltown Business Dashboard</h3>
+                    </div>
+                    <div class="w3-display-container">
+                        <!-- <div class="w3-display-topleft w3-black w3-padding">Campbelltown Businesses</div> -->
+                        <iframe title="campbelltown-business-data - Page 1" width="100%" height="100%"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9"
+                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
+                        </iframe>
+                    </div>
+                    <p>An exploratory dashboard representing the data from the <a
+                            href="https://data.campbelltown.nsw.gov.au/pages/home/" target="_blank">Campbelltown
+                            Business Data
+                            API</a>.
+                    </p>
+                    <p>One possible conclusion/result from the data presented
+                        could be that there are still businesses with little to no web presence - for example, they may
+                        benefit from a website and become the target of certain marketing campaigns.</p>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="">
+                        <h3>Registered Engineers Lookup</h3>
+                    </div>
+                    <div class="w3-display-container">
+                        <!-- <div class="w3-display-topleft w3-black w3-padding">Registered Engineers</div> -->
+                        <iframe title="register-engineering-2020" width="100%" height="100%"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection"
+                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
+                        </iframe>
+                    </div>
+                    <p>A lookup tool for engineering grads &amp; undergrads combining the data from the site <a
+                            href="http://engineeringcompanies.com.au" target="_blank">EngineeringCompanies.com.au</a>
+                        and the <a href="https://data.gov.au/api" target="_blank">goverment data API</a>.</p>
+                    <p>
+                        It is difficult to find business contacts, specifically engineer contacts, to approach for information about working in the engineering field. This tool uses freely available information to link companies that offer grad roles with engineers registered with Engineers Australia (using the Registered Engineers of Queensland dataset).
+                    </p>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="">
+                        <h3>Collapsible 20T Shop Press</h3>
+                    </div>
+                    <div class="w3-display-container">
+                        <!-- <div class="w3-display-topleft w3-black w3-padding">Collapsible Press</div> -->
+                        <model-viewer id="press" style="height: 450px;width: 100%;" bounds="tight"
+                            src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/20t-shoppress.gltf"
+                            ar ar-modes="" camera-controls poster="" shadow-intensity="0" exposure="0.5"
+                            camera-orbit="-0.2875deg 157.5deg auto">
+                        </model-viewer>
+                    </div>
+                    <p>A tool designed and built by me to use at home, packing a 20T bottle jack. Link to the design
+                        is here: <a
+                            href="https://cad.onshape.com/documents/4ee8829718be739d1cf22935/w/1c4db89e28d16b7e70c76ed2/e/2eb630331041fcfc251a0520?renderMode=0&uiState=61bbad42d1e17349fa50f465"
+                            target="_blank">Collapsible press in Onshape</a>.</p>
+                    <p>I needed a press for working with bearings, and decided that this would make a good design and build project - I've cut, drill, and welded it together (painting to go, pics coming soon).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="w3-margin-bottom">
+            <div class="w3-container w3-padding-16" id="work">
+                <div class="w3-center">
+                    <button class="w3-btn w3-button" onclick="toggleShow('work-toggle')">
+                        <h3 class="w3-border-bottom w3-border-light-grey">Work</h3>
+                    </button>
+                </div>
+            </div>
+            <div id="work-toggle" class="w3-row-padding w3-show dev-hide">
+                <div class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left">
+                    <p>I have worked on projects in a variety of disciplines in my role as a professional engineer. To explore them, please click on one of the below categories:</p>
+                    <p><strong>NOTE: This section is currently in development, these are currently dead links. I hope for them to be up soon!</strong></p>
+                    <p>In the meantime, please feel free to review my <a href="https://km594.github.io/krispinmoutia/resume.html" target="_blank">resume</a></p>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-black w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-digital-marketing-1433427_1280.jpg')">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-black w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/qctool.jpg');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-black w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/QualityManagementApplication.png');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/mechanical-1.jpg');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Mechanical Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-black w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/bpmn-example.png');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Operations &amp; Planning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l4 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-padding poster-1-lg background"
+                            style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/qms-1.png');">
+                            <div class="w3-black w3-display-middle w3-block">
+                                <p>Quality Management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
-        <section>
+        <!-- <section class="w3-hide">
             <div class="w3-container w3-padding-32" id="contact">
                 <button class="w3-btn w3-button" onclick="toggleShow('contact-toggle')">
                     <h3 class="w3-border-bottom w3-border-light-grey">Contact</h3>
@@ -394,208 +506,195 @@
                     </form>
                 </div>
             </div>
-            <!-- Image of location/map -->
-            <!-- <div class="w3-container">
-                <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
-            </div> -->
-        </section>
+        </section> -->
 
         <!-- End page content -->
     </div>
 
 
-    <!-- Footer -->
-    <footer id="footer" class="w3-center w3-black w3-padding-16 w3-hide">
-        <p class="">Written by me, powered (with thanks) by <a href="https://www.w3schools.com/w3css/default.asp"
-                title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-    </footer>
 
-    <script>
-        // toggles display of elements selected by id
-        function toggleShow(id) {
-            var x = document.getElementById(id);
-            // TODO: check display state
-            // show
-            if (!x.classList.contains("w3-show")) {
-                x.classList.add("w3-show");
-                if (x.classList.contains("w3-hide")) {
-                    x.classList.remove("w3-hide");
-                }
-            } else {
-                //hide
-                if (x.classList.contains("w3-show")) {
-                    x.classList.remove("w3-show");
-                }
-                if(id == "hamburger-menu"){
-                    setTimeout(() => { x.classList.add("w3-hide"); }, 300);
-                }else{
-                    x.classList.add("w3-hide");
-                }
-            }
-            setMenuPos();
-            // setTimeout(() => { setMenuPos()}, 300);
-        }
-
-        function setMenuPos() {
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const topnav = document.getElementById('topnav');
-            if (hamburgerMenu.classList.contains("w3-show")) {
-                hamburgerMenu.style.top = topnav.offsetHeight.toString() + 'px'
-            } else {
-                hamburgerMenu.style.top = '-600px';
-            }
-        }
-
-        /*
-        window.onscroll = function() {toggleShow()};
-        
-        function toggleShow() {
-          if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
-            document.getElementById("nav").classList.add('slideUp');
-          }
-        } */
-        function toggleNav() {
-            var sidebar = document.getElementById("mySidebar");
-            var mainContent = document.getElementById("main");
-            // check for screen width
-            if (window.innerWidth > 1000) {
-                // check for sidebar state
-                if (sidebar.style.width === "0px" || sidebar.style.width === "") {
-                    sidebar.style.width = "33%";
-                    mainContent.style.marginLeft = "33%";
-                } else {
-                    sidebar.style.width = "0";
-                    mainContent.style.marginLeft = "0";
-                }
-            } else if (window.innerWidth > 600) {
-                if (sidebar.style.width === "0px" || sidebar.style.width === "") {
-                    sidebar.style.width = "50%";
-                    mainContent.style.marginLeft = "50%";
-                } else {
-                    sidebar.style.width = "0";
-                    mainContent.style.marginLeft = "0";
-                }
-            } else {
-                if (sidebar.style.width === "0px" || sidebar.style.width === "") {
-                    sidebar.style.width = "100%";
-                    mainContent.style.marginLeft = "100%";
-                } else {
-                    sidebar.style.width = "0";
-                    mainContent.style.marginLeft = "0";
-                }
-            }
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            toggleShow("sidebar-overlay");
-        }
-
-        var prevScrollpos = window.pageYOffset;
-        /* TODO: For production, allow user to select dark mode via toggle */
-        window.onload = function () {
-            var arr = document.getElementsByTagName("code");
-            for (var e of arr) {
-                e.classList.add("dark-mode");
-            }
-        }
-
-        /* function collapseMenu() {
-            var x = document.getElementById("myLinks");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
-        }
- */
-        function hideSplash(e) {
-            e.parentNode.classList.add("w3-hide");
-            document.getElementById("main-content").classList.replace("w3-hide", "w3-show");
-            document.getElementById("summary-button").classList.replace("w3-hide", "w3-show");
-            document.getElementById("topnav").classList.replace("w3-hide", "w3-show");
-            document.getElementsByTagName("footer")[0].classList.remove("w3-bottom");
-            // alert("Element: " + e.parentNode.id + " hidden");
-            toggleShow("main-content");
-            // toggleShow("navbar");
-        }
-
-        function toggleDisplay(id) {
-            var x = document.getElementById(id);
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
-        }
-
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function toggleResponsive(id) {
-            var x = document.getElementById(id);
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-
-        /* Make topnav link active */
-        function activateLink(link) {
-            var x = document.getElementById("topnav");
-            for (const a of x.children[0].children) {
-                if (a.classList.contains("active")) {
-                    a.classList.remove("active");
-                    a.classList.remove("w3-indigo");
-                }
-            }
-            link.classList.add("w3-indigo");
-            link.classList.add("active");
-        }
-
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function () {
-            // collapsing navbar
-            const currentScrollPos = window.pageYOffset;
-            const topnav = document.getElementById("topnav");
-            const hamburgerMenu = document.getElementById("hamburger-menu");
-            const topnavHeight = topnav.style.height
-            // hide hamburger-menu
-            // if(!document.getElementById("hamburger-menu").classList.contains("w3-hide")){
-            //     toggleShow("hamburger-menu");
-            // }
-            hamburgerMenu.style.top = "-600px";
-            if (hamburgerMenu.classList.contains('w3-show')) {
-                toggleShow("hamburger-menu");
-                // setTimeout(() => {  toggleShow("hamburger-menu"); }, Number.parseFloat(window.getComputedStyle(hamburgerMenu).getPropertyValue('transition-duration').slice(0,window.getComputedStyle(hamburgerMenu).getPropertyValue('transition-duration').indexOf('s')))*1000);     
-            }
-            if (prevScrollpos > currentScrollPos) { //scrolling down
-                // move navbar to top of screen
-                topnav.style.top = "0";
-            } else { //scrolling up
-                // move navbar off page
-                topnav.style.top = "-60px";
-            }
-            // }
-            prevScrollpos = currentScrollPos;
-            if (prevScrollpos == 0) {
-                topnav.classList.remove("w3-border-bottom");
-            } else {
-                if (!topnav.classList.contains("w3-border-bottom")) {
-                    topnav.classList.add("w3-border-bottom");
-                }
-            }
-            // disappearing left info panel
-            // var infoPanelMaxPos = infoPanel.getBoundingClientRect().height;
-            // var infoPanelMaxPos = infoPanel.getBoundingClientRect().top + infoPanel.getBoundingClientRect().height;
-            // var infoPanelMaxPos = infoPanel.getBoundingClientRect().top - infoPanel.getBoundingClientRect().height;
-
-        }
-
-    </script>
 
 
 </body>
+<!-- Footer -->
+<footer id="footer" class="w3-center w3-black w3-border-top w3-margin-top w3-padding-16 w3-hide">
+    <!-- script tag -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <!-- All individual language files -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-dax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-powerquery.min.js"></script>
+    <div class="w3-container w3-center">
+        <p>Find me on social media.</p>
+        <div class="w3-xlarge">
+            <a title="Facebook" href="javascript:void(0)" target="_blank"><i class="fab fa-facebook w3-hover-opacity scaled"></i></a>
+            <a title="Github" href="https://github.com/km594" target="_blank"><i class="fab fa-github w3-hover-opacity scaled"></i></a>
+            <a title="Google Developer" href="javascript:void(0)" target="_blank"><i class="fab fa-chrome w3-hover-opacity scaled"></i></a>
+            <a title="GrabCad" href="https://grabcad.com/krispin.moutia-2" target="_blank"><i class="fa fa-cube w3-hover-opacity scaled"></i></a>
+            <a title="LinkedIn" href="https://www.linkedin.com/in/kmoutia594/" target="_blank"><i
+                    class="fab fa-linkedin w3-hover-opacity scaled"></i></a>
+            <a title="Power BI" href="javascript:void(0)" target="_blank"><i class="fa fa-signal w3-hover-opacity scaled"></i></a>
+        </div>
+    </div>
+    <p class="">Written by me, hosted with &#9829; on Github Pages, and powered (with thanks) by <a href="https://www.w3schools.com/w3css/default.asp"
+            title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+<script>
+    // toggles display of elements selected by id
+    function toggleShow(id) {
+        var x = document.getElementById(id);
+        // TODO: check display state
+        // show
+        if (!x.classList.contains("w3-show")) {
+            x.classList.add("w3-show");
+            if (x.classList.contains("w3-hide")) {
+                x.classList.remove("w3-hide");
+            }
+        } else {
+            //hide
+            if (x.classList.contains("w3-show")) {
+                x.classList.remove("w3-show");
+            }
+            if (id == "hamburger-menu") {
+                setTimeout(() => { x.classList.add("w3-hide"); }, 300);
+            } else {
+                x.classList.add("w3-hide");
+            }
+        }
+        setMenuPos();
+    }
+
+    function setMenuPos() {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const topnav = document.getElementById('topnav');
+        if (hamburgerMenu.classList.contains("w3-show")) {
+            hamburgerMenu.style.top = topnav.offsetHeight.toString() + 'px'
+        } else {
+            hamburgerMenu.style.top = '-600px';
+        }
+    }
+
+    function toggleNav() {
+        var sidebar = document.getElementById("mySidebar");
+        var mainContent = document.getElementById("main");
+        // check for screen width
+        if (window.innerWidth > 1000) {
+            // check for sidebar state
+            if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                sidebar.style.width = "33%";
+                mainContent.style.marginLeft = "33%";
+            } else {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            }
+        } else if (window.innerWidth > 600) {
+            if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                sidebar.style.width = "50%";
+                mainContent.style.marginLeft = "50%";
+            } else {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            }
+        } else {
+            if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                sidebar.style.width = "100%";
+                mainContent.style.marginLeft = "100%";
+            } else {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            }
+        }
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        toggleShow("sidebar-overlay");
+    }
+
+    var prevScrollpos = window.pageYOffset;
+    /* TODO: For production, allow user to select dark mode via toggle */
+    window.onload = function () {
+        var arr = document.getElementsByTagName("code");
+        for (var e of arr) {
+            e.classList.add("dark-mode");
+        }
+    }
+
+    function hideSplash(e) {
+        e.parentNode.classList.add("w3-hide");
+        document.getElementById("main-content").classList.replace("w3-hide", "w3-show");
+        document.getElementById("summary-button").classList.replace("w3-hide", "w3-show");
+        document.getElementById("topnav").classList.replace("w3-hide", "w3-show");
+        document.getElementsByTagName("footer")[0].classList.remove("w3-bottom");
+        toggleShow("main-content");
+    }
+
+    function toggleDisplay(id) {
+        var x = document.getElementById(id);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function toggleResponsive(id) {
+        var x = document.getElementById(id);
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
+
+    /* Make topnav link active */
+    function activateLink(link) {
+        var x = document.getElementById("topnav");
+        for (const a of x.children[0].children) {
+            if (a.classList.contains("active")) {
+                a.classList.remove("active");
+                a.classList.remove("w3-indigo");
+            }
+        }
+        link.classList.add("w3-indigo");
+        link.classList.add("active");
+    }
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        // collapsing navbar
+        const currentScrollPos = window.pageYOffset;
+        const topnav = document.getElementById("topnav");
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const topnavHeight = topnav.style.height
+        // hide hamburger-menu
+        hamburgerMenu.style.top = "-600px";
+        if (hamburgerMenu.classList.contains('w3-show')) {
+            toggleShow("hamburger-menu");
+        }
+        if (prevScrollpos > currentScrollPos) { //scrolling down
+            // move navbar to top of screen
+            topnav.style.top = "0";
+        } else { //scrolling up
+            // move navbar off page
+            topnav.style.top = "-60px";
+        }
+        // }
+        prevScrollpos = currentScrollPos;
+        if (prevScrollpos == 0) {
+            topnav.classList.remove("w3-border-bottom");
+        } else {
+            if (!topnav.classList.contains("w3-border-bottom")) {
+                topnav.classList.add("w3-border-bottom");
+            }
+        }
+
+    }
+
+</script>
 
 </html>
