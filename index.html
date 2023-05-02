@@ -210,7 +210,7 @@
         onclick="toggleShow('page-container');toggleShow('footer');this.style.display='none'">Start</a>
 
     <!-- Page content -->
-    <div id="page-container" class="w3-content w3-padding w3-hide" style="max-width:1564px">
+    <div id="page-container" class="w3-content w3-padding" style="max-width:1564px">
 
         <!-- About Section -->
         <section>
@@ -228,7 +228,16 @@
                         I'm all about applying my wide knowledge base to develop holistic solutions -
                         from identifying process improvement opportunities to engaging in product design, my main goal
                         is
-                        to ensure that anything I output is both soundly designed and cost effective.
+                        to ensure that the projects I work with have a sound design and are cost-effective.
+                    </p>
+                    <p>
+                        When I'm not at work or with family, you'll find me:
+                        <ul>
+                            <li>Designing products using Inventor or OnShape</li>
+                            <li>Prototyping on my Ender 3 S1 Plus 3D printer</li>
+                            <li>Developing software - I'm currently keen on operations research, or</li>
+                            <li>Fabricating parts I've designed in the shed</li>
+                        </ul>
                     </p>
                     <p>I am:</p>
                     <ul id="about-details" class="">
@@ -316,85 +325,6 @@
             </div>
         </section>
 
-        <!-- Project Section -->
-        <section class="">
-            <div class="w3-container w3-padding-16" id="projects">
-                <div class="w3-center">
-                    <button class="w3-btn w3-button" onclick="toggleShow('projects-toggle')">
-                        <h3 class="w3-border-bottom w3-border-light-grey">Projects</h3>
-                    </button>
-                </div>
-            </div>
-            <div id="projects-toggle" class="w3-row-padding w3-show dev-hide">
-                <div class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left">
-                    <p>Here's a collection of the projects I have worked on (or am currently working on):</p>
-                </div>
-                <div class="w3-col l6 m6 w3-margin-bottom">
-                    <div class="">
-                        <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection">Campbelltown Business Dashboard</a></h3>
-                    </div>
-                    <div class="w3-display-container">
-                        <!-- <div class="w3-display-topleft w3-black w3-padding">Campbelltown Businesses</div> -->
-                        <iframe title="campbelltown-business-data - Page 1" width="100%" height="100%"
-                            src="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&angularOnlyReportEmbed=false"
-                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
-                        </iframe>
-                    </div>
-                    <p>An exploratory dashboard representing the data from the <a
-                            href="https://data.campbelltown.nsw.gov.au/pages/home/" target="_blank">Campbelltown
-                            Business Data
-                            API</a>.
-                    </p>
-                    <p>One possible conclusion/result from the data presented
-                        could be that there are still businesses with little to no web presence - for example, they may
-                        benefit from a website and become the target of certain marketing campaigns.</p>
-                </div>
-                <div class="w3-col l6 m6 w3-margin-bottom">
-                    <div class="">
-                        <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection">Registered Engineers Lookup</a></h3>
-                    </div>
-                    <div class="w3-display-container">
-                        <!-- <div class="w3-display-topleft w3-black w3-padding">Registered Engineers</div> -->
-                        <iframe title="register-engineering-2020" width="100%" height="100%"
-                            src="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection&angularOnlyReportEmbed=false"
-                            frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
-                        </iframe>
-                    </div>
-                    <p>A lookup tool for engineering grads &amp; undergrads combining the data from the site <a
-                            href="http://engineeringcompanies.com.au" target="_blank">EngineeringCompanies.com.au</a>
-                        and the <a href="https://data.gov.au/api" target="_blank">goverment data API</a>.</p>
-                    <p>
-                        It is difficult to find business contacts, specifically engineer contacts, to approach for
-                        information about working in the engineering field. This tool uses freely available information
-                        to link companies that offer grad roles with engineers registered with Engineers Australia
-                        (using the Registered Engineers of Queensland dataset).
-                    </p>
-                </div>
-                <div class="w3-col l6 m6 w3-margin-bottom">
-                    <div class="">
-                        <h3>Collapsible 20T Shop Press</h3>
-                    </div>
-                    <div class="w3-display-container">
-                        <!-- <div class="w3-display-topleft w3-black w3-padding">Collapsible Press</div> -->
-                        <model-viewer id="press" style="height: 450px;width: 100%;" bounds="tight"
-                            src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/20t-shoppress.gltf"
-                            ar ar-modes="" camera-controls poster="" shadow-intensity="0" exposure="0.5"
-                            camera-orbit="-0.2875deg 157.5deg auto">
-                        </model-viewer>
-                    </div>
-                    <p>Tooling designed and built by me, for home use (press capacity is 20T). Link to the design
-                        is here: <a
-                            href="https://cad.onshape.com/documents/4ee8829718be739d1cf22935/w/1c4db89e28d16b7e70c76ed2/e/2eb630331041fcfc251a0520?renderMode=0&uiState=61bbad42d1e17349fa50f465"
-                            target="_blank">Collapsible press in Onshape</a>.</p>
-                    <p>I needed a press for working with bearings, and decided that this would make a good design and
-                        build project - I've cut, drilled, and welded it into its <a
-                            href="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/press-1.jpg"
-                            target="_blank">current state</a>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <!-- Work Section -->
         <section class="w3-margin-bottom">
             <div class="w3-container w3-padding-16" id="work">
@@ -413,70 +343,202 @@
                     <p>In the meantime, please feel free to review my <a
                             href="https://km594.github.io/krispinmoutia/resume.html" target="_blank">resume</a></p>
                 </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-col l4 m6 w3-margin-bottom" onclick="toggleShow('work-analytics');hideElements(['work-design', 'work-development', 'work-mechengineering', 'work-operations', 'work-quality'])" style="cursor: pointer">
                     <div class="w3-display-container">
                         <div class="w3-black w3-padding poster-1-lg background"
                             style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/pixabay-digital-marketing-1433427_1280.jpg')">
                             <div class="w3-black w3-display-middle w3-block">
-                                <p>Analytics</p>
+                                <p style="user-select: none;">Analytics</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-col l4 m6 w3-margin-bottom" onclick="toggleShow('work-design');hideElements(['work-analytics', 'work-development', 'work-mechengineering', 'work-operations', 'work-quality'])" style="cursor: pointer">
                     <div class="w3-display-container">
                         <div class="w3-black w3-padding poster-1-lg background"
                             style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/qctool.jpg');">
                             <div class="w3-black w3-display-middle w3-block">
-                                <p>Design</p>
+                                <p style="user-select: none;">Design</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-col l4 m6 w3-margin-bottom" onclick="toggleShow('work-development');hideElements(['work-analytics', 'work-design', 'work-mechengineering', 'work-operations', 'work-quality'])" style="cursor: pointer">
                     <div class="w3-display-container">
                         <div class="w3-black w3-padding poster-1-lg background"
                             style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/QualityManagementApplication.png');">
                             <div class="w3-black w3-display-middle w3-block">
-                                <p>Development</p>
+                                <p style="user-select: none;">Development</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-col l4 m6 w3-margin-bottom" onclick="toggleShow('work-mechengineering');hideElements(['work-analytics', 'work-design', 'work-development', 'work-operations', 'work-quality'])" style="cursor: pointer">
                     <div class="w3-display-container">
                         <div class="w3-padding poster-1-lg background"
                             style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/support-shaft-FEA.jpg');">
                             <div class="w3-black w3-display-middle w3-block">
-                                <p>Mechanical Engineering</p>
+                                <p style="user-select: none;">Mechanical Engineering</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-col l4 m6 w3-margin-bottom" onclick="toggleShow('work-operations');hideElements(['work-analytics', 'work-design', 'work-development', 'work-mechengineering', 'work-quality'])" style="cursor: pointer">
                     <div class="w3-display-container">
                         <div class="w3-black w3-padding poster-1-lg background"
                             style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/bpmn-example.png');">
                             <div class="w3-black w3-display-middle w3-block">
-                                <p>Operations &amp; Planning</p>
+                                <p style="user-select: none;">Operations &amp; Planning</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-col l4 m6 w3-margin-bottom" onclick="toggleShow('work-quality');hideElements(['work-analytics', 'work-design', 'work-development', 'work-mechengineering', 'work-operations'])" style="cursor: pointer">
                     <div class="w3-display-container">
                         <div class="w3-padding poster-1-lg background"
                             style="background-image: url('https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/qms-1.png');">
                             <div class="w3-black w3-display-middle w3-block">
-                                <p>Quality Management</p>
+                                <p style="user-select: none;">Quality Management</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="w3-margin-bottom">
+            <div class="w3-container w3-padding-16 w3-hide" id="work-detail">
+                <div class="w3-center">
+                    <button class="w3-btn w3-button" onclick="toggleShow('work-detail-toggle')">
+                        <h3 class="w3-border-bottom w3-border-light-grey">Work Detail</h3>
+                    </button>
+                </div>
+            </div>
+            <div id="work-detail-toggle" class="w3-row-padding">
+                <div id="work-analytics" class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left w3-hide">
+                    <ul>
+                        <li>Excel</li>
+                        <li>Power Query</li>
+                        <li>Python</li>
+                        <li>Power BI</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div id="work-design" class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left w3-hide">
+                    <p>
+                        Design
+                    </p>
+                </div>
+                <div id="work-development" class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left w3-hide">
+                    <ul>
+                        <li>CRM/ERP</li>
+                        <li>Analysis</li>
+                        <li>Accounts manager user interface</li>
+                        <li>Engineering calculators</li>
+                    </ul>
+                </div>
+                <div id="work-mechengineering" class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left w3-hide">
+                    <ul>
+                        <li>Drafting</li>
+                        <li>Product Design</li>
+                        <li>Tool Design</li>
+                        <li>ANSYS/Engineering</li>
+                        <li>Prototyping</li>
+                        <li>Research and development</li>
+                        <li>Project management</li>
+                    </ul>
+                </div>
+                <div id="work-operations" class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left w3-hide">
+                    <p>
+                        Operations and planning
+                    </p>
+                </div>
+                <div id="work-quality" class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left w3-hide">
+                    <p>
+                        Quality Engineering
+                    </p>
+                </div>
+            </div>
+        </section>
     </div>
 
+    <!-- Project Section -->
+    <section class="">
+        <div class="w3-container w3-padding-16" id="projects">
+            <div class="w3-center">
+                <button class="w3-btn w3-button" onclick="toggleShow('projects-toggle')">
+                    <h3 class="w3-border-bottom w3-border-light-grey">Projects</h3>
+                </button>
+            </div>
+        </div>
+        <div id="projects-toggle" class="w3-row-padding w3-show dev-hide">
+            <div class="w3-block w3-margin-bottom w3-padding-16 w3-margin-left">
+                <p>Here's a collection of the projects I have worked on (or am currently working on):</p>
+            </div>
+            <div class="w3-col l6 m6 w3-margin-bottom">
+                <div class="">
+                    <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection">Campbelltown Business Dashboard</a></h3>
+                </div>
+                <div class="w3-display-container">
+                    <!-- <div class="w3-display-topleft w3-black w3-padding">Campbelltown Businesses</div> -->
+                    <iframe title="campbelltown-business-data - Page 1" width="100%" height="100%"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiNmJlZjRjMjYtMjM4OS00YzAwLTkyYmQtYjllMGZlNGQ2OGU1IiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&angularOnlyReportEmbed=false"
+                        frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
+                    </iframe>
+                </div>
+                <p>An exploratory dashboard representing the data from the <a
+                        href="https://data.campbelltown.nsw.gov.au/pages/home/" target="_blank">Campbelltown
+                        Business Data
+                        API</a>.
+                </p>
+                <p>One possible conclusion/result from the data presented
+                    could be that there are still businesses with little to no web presence - for example, they may
+                    benefit from a website and become the target of certain marketing campaigns.</p>
+            </div>
+            <div class="w3-col l6 m6 w3-margin-bottom">
+                <div class="">
+                    <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection">Registered Engineers Lookup</a></h3>
+                </div>
+                <div class="w3-display-container">
+                    <!-- <div class="w3-display-topleft w3-black w3-padding">Registered Engineers</div> -->
+                    <iframe title="register-engineering-2020" width="100%" height="100%"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiNmU3MjQ5MGQtYWQyYy00YmM1LTlhZTItOTMzMjY1YjNhNzkwIiwidCI6ImRkNGI0YmI2LWIyMzctNDAyYi1hMDJjLWM0ZTk1N2M5MDY0ZSJ9&pageName=ReportSection&angularOnlyReportEmbed=false"
+                        frameborder="0" allowFullScreen="true" loading="lazy" class="poster-lg">
+                    </iframe>
+                </div>
+                <p>A lookup tool for engineering grads &amp; undergrads combining the data from the site <a
+                        href="http://engineeringcompanies.com.au" target="_blank">EngineeringCompanies.com.au</a>
+                    and the <a href="https://data.gov.au/api" target="_blank">goverment data API</a>.</p>
+                <p>
+                    It is difficult to find business contacts, specifically engineer contacts, to approach for
+                    information about working in the engineering field. This tool uses freely available information
+                    to link companies that offer grad roles with engineers registered with Engineers Australia
+                    (using the Registered Engineers of Queensland dataset).
+                </p>
+            </div>
+            <div class="w3-col l6 m6 w3-margin-bottom">
+                <div class="">
+                    <h3>Collapsible 20T Shop Press</h3>
+                </div>
+                <div class="w3-display-container">
+                    <!-- <div class="w3-display-topleft w3-black w3-padding">Collapsible Press</div> -->
+                    <model-viewer id="press" style="height: 450px;width: 100%;" bounds="tight"
+                        src="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/20t-shoppress.gltf"
+                        ar ar-modes="" camera-controls poster="" shadow-intensity="0" exposure="0.5"
+                        camera-orbit="-0.2875deg 157.5deg auto">
+                    </model-viewer>
+                </div>
+                <p>Tooling designed and built by me, for home use (press capacity is 20T). Link to the design
+                    is here: <a
+                        href="https://cad.onshape.com/documents/4ee8829718be739d1cf22935/w/1c4db89e28d16b7e70c76ed2/e/2eb630331041fcfc251a0520?renderMode=0&uiState=61bbad42d1e17349fa50f465"
+                        target="_blank">Collapsible press in Onshape</a>.</p>
+                <p>I needed a press for working with bearings, and decided that this would make a good design and
+                    build project - I've cut, drilled, and welded it into its <a
+                        href="https://raw.githubusercontent.com/km594/krispinmoutia/master/pics/press-1.jpg"
+                        target="_blank">current state</a>.
+                </p>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -535,6 +597,15 @@
             }
         }
         setMenuPos();
+    }
+
+    function hideElements(arr){
+        var x = 0;
+        arr.forEach(e => {
+            x = document.getElementById(e);
+            x.classList.remove("w3-show");
+            x.classList.add("w3-hide");
+    });
     }
 
     function setMenuPos() {
