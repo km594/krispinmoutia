@@ -422,6 +422,9 @@
         flex-direction: column;
     }
 </style>
+<script>
+    var dev = true;
+</script>
 
 <body class="w3-light-grey">
     <!-- Navbar (sit on top) -->
@@ -613,11 +616,11 @@
                         <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2022 - Present
                         </h6>
                         <h6>
-                            <button onclick="toggleShow('job1')" class="w3-button w3-light-grey w3-block w3-left-align">
+                            <button onclick="toggleShow('job0')" class="w3-button w3-light-grey w3-block w3-left-align w3-hover-text-white">
                                 Work description:
                             </button>
                         </h6>
-                        <div id="job1" class="w3-hide w3-card dev-show">
+                        <div id="job0" class="w3-hide w3-card dev-show">
                             <ul class="w3-ul ">
                                 <li class="">
                                     <button class="w3-button w3-white w3-block w3-left-align"
@@ -625,21 +628,34 @@
                                         Product Design
                                         <!-- <a href="javascript:void(0)" onclick="toggleShow('work-0-0')">Quality improvement</a> -->
                                     </button>
-                                    <div id="work-0-0" class="w3-hide dev-show">
+                                    <div id="work-0-0" class="w3-hide dev-show w3-light-gray">
                                         <ul class="w3-ul">
-                                            <li class="w3-hover-light-grey">Consumer data analysis</li>
-                                            <li class="w3-hover-light-grey">Troubleshooting</li>
-                                            <li class="w3-hover-light-grey">Process improvement</li>
+                                            <li class="w3-hover-grey w3-hover-text-white">Finite element analysis (FEA)</li>
+                                            <li class="w3-hover-grey w3-hover-text-white">Design for manufacture</li>
+                                            <li class="w3-hover-grey w3-hover-text-white">Product improvement</li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="">
                                     <button class="w3-button w3-white w3-block w3-left-align"
-                                        onclick="toggleShow('work-0-2')">Process design</button>
+                                    onclick="toggleShow('work-0-1')">Failure analysis</button>
+                                    <div id="work-0-1" class="w3-hide dev-show w3-light-gray">
+                                        <ul class="w3-ul">
+                                            <li class="w3-hover-grey w3-hover-text-white">Troubleshooting</li>
+                                            <li class="w3-hover-grey w3-hover-text-white">Testing</li>
+                                            <li class="w3-hover-grey w3-hover-text-white">Reporting</li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li class="">
                                     <button class="w3-button w3-white w3-block w3-left-align"
-                                        onclick="toggleShow('work-0-4')">Project management</button>
+                                    onclick="toggleShow('work-0-2')">Project management</button>
+                                    <div id="work-0-2" class="w3-hide dev-show w3-light-gray">
+                                        <ul class="w3-ul">
+                                            <li class="w3-hover-grey w3-hover-text-white">Progress reporting</li>
+                                            <li class="w3-hover-grey w3-hover-text-white">Drawing management</li>
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -651,7 +667,7 @@
                             2021
                         </h6>
                         <h6>
-                            <button onclick="toggleShow('job1')" class="w3-button w3-light-grey w3-block w3-left-align">
+                            <button onclick="toggleShow('job1')" class="w3-button w3-light-grey w3-block w3-left-align w3-hover-text-white">
                                 Work description:
                             </button>
                         </h6>
@@ -713,7 +729,7 @@
                         <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Apr 2020
                             (Contract)</h6>
                         <h6>
-                            <button onclick="toggleShow('job2')" class="w3-button w3-light-grey w3-block w3-left-align">
+                            <button onclick="toggleShow('job2')" class="w3-button w3-light-grey w3-block w3-left-align w3-hover-text-white">
                                 Work description:
                             </button>
                         </h6>
@@ -729,7 +745,7 @@
                         <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i> Dec 2018 - Mar
                             2019</h6>
                         <h6>
-                            <button onclick="toggleShow('job3')" class="w3-button w3-light-grey w3-block w3-left-align">
+                            <button onclick="toggleShow('job3')" class="w3-button w3-light-grey w3-block w3-left-align w3-hover-text-white">
                                 Work description:
                             </button>
                         </h6>
@@ -952,5 +968,17 @@
                 class="w3-hover-text-green">w3.css</a></p>
     </div>
 </footer>
+
+<script>
+    window.onload = function (){
+        // alert("Hello world!");
+        if (dev){
+            toggleShow("job0");
+            toggleShow("work-0-0");
+            toggleShow("work-0-1");
+            toggleShow("work-0-2");
+        }
+    }
+</script>
 
 </html>
