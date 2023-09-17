@@ -4,5 +4,11 @@
     "parameters": ["x", "y"],
     "function": "IF(y > 0,y,x)",
     "description": "Testing"
+  },
+  {
+    "functionName": "test2",
+    "parameters": ["x", "y"],
+    "function": "IF(x > 0,x,y)",
+    "description": "Testing2"
   }
 ]
