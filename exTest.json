@@ -2,13 +2,13 @@
   {
     "functionName": "test",
     "parameters": ["x", "y"],
-    "formula": "IF(y > 0,y,x)",
+    "formula": "=IF(y > 0,y,x)",
     "description": "Testing"
   },
   {
     "functionName": "test2",
     "parameters": ["x", "y"],
-    "formula": "IF(x > 0,x,y)",
+    "formula": "=IF(x > 0,x,y)",
     "description": "Testing2"
   }
 ]
